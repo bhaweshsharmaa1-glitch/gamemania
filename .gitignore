@@ -1,0 +1,12 @@
+node_modules/
+www/
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/signing.properties
+*.jks
+*.keystore
+windows/bin/
+windows/obj/
+windows/publish/

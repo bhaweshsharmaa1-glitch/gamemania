@@ -1,0 +1,37 @@
+.home-main{width:min(1080px,calc(100% - 48px));margin:0 auto}
+.welcome{padding:76px 0 64px;text-align:center}
+.eyebrow{display:flex;align-items:center;gap:8px;margin:0;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.15em}
+.welcome>.eyebrow{justify-content:center}
+.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#a5b99c}
+.welcome h1{margin:19px 0 12px;font-family:"Segoe UI",system-ui,sans-serif;font-size:clamp(48px,8vw,78px);line-height:1.04;letter-spacing:-.075em;font-weight:700}
+.welcome h1 span{color:#879b7a}
+.welcome-copy{margin:0;color:#77766f;font-size:15px;line-height:1.7}
+.welcome-meta{margin-top:24px;color:#8a8982;font-size:11px;letter-spacing:.02em}
+.meta-spark{color:#d39c5d}.meta-divider{padding:0 7px;color:#c5c1b6}
+.games-section{padding:4px 0 56px}
+.section-heading{display:flex;align-items:end;justify-content:space-between;margin-bottom:19px}
+.section-heading .eyebrow{margin-bottom:7px}
+.section-heading h2{margin:0;font:700 23px "Segoe UI",system-ui,sans-serif;letter-spacing:-.045em}
+.game-count{padding-bottom:4px;color:#aaa69b;font-size:10px;font-weight:700;letter-spacing:.13em}
+.game-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:15px}
+.game-card{position:relative;display:flex;min-height:205px;flex-direction:column;justify-content:space-between;grid-column:span 2;overflow:hidden;padding:18px 19px 17px;border:1px solid rgba(52,52,43,.055);border-radius:17px;background:#fffefa;box-shadow:0 3px 12px rgba(58,52,35,.025);text-decoration:none;transition:transform .24s cubic-bezier(.2,.8,.2,1),box-shadow .24s ease,border-color .24s ease}
+.game-card:nth-child(4){grid-column:2/span 2}.game-card:nth-child(5){grid-column:4/span 2}
+.game-card:hover,.game-card:focus-visible{z-index:1;transform:scale(1.025);border-color:rgba(83,91,65,.14);box-shadow:0 12px 30px rgba(58,52,35,.09);outline:none}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between}
+.game-icon{display:flex;width:48px;height:48px;align-items:center;justify-content:center;border-radius:14px;font-size:24px}
+.card-arrow{display:grid;width:27px;height:27px;place-items:center;border:1px solid rgba(50,50,45,.08);border-radius:50%;color:#98968e;font-size:15px;transition:transform .22s ease,color .22s ease}
+.game-card:hover .card-arrow{transform:translate(2px,-2px);color:#4d5144}
+.card-category{color:#a09c91;font-size:9px;font-weight:700;letter-spacing:.14em}
+.card-copy h3{margin:7px 0 5px;font:700 17px "Segoe UI",system-ui,sans-serif;letter-spacing:-.04em}
+.card-copy p{max-width:245px;margin:0;color:#858279;font-size:11px;line-height:1.5}
+.card-index{position:absolute;right:19px;bottom:17px;color:#c4c0b7;font:600 10px "Segoe UI",system-ui,sans-serif}
+.card-connect{background:linear-gradient(145deg,#fffefa,#f8f6ed)}.icon-connect{gap:4px;background:#f0ead4}.icon-connect i{width:8px;height:8px;border-radius:50%;background:#df7868;box-shadow:0 13px 0 #df7868}.icon-connect i:nth-child(even){background:#839777;box-shadow:0 13px 0 #839777}
+.card-rps{background:linear-gradient(145deg,#fffefa,#f8f1ed)}.icon-rps{position:relative;background:#f3e7df;font-size:22px}.icon-rps span{position:absolute;right:0;bottom:0;font-size:17px}
+.card-memory{background:linear-gradient(145deg,#fffefa,#f1f3eb)}.icon-memory{display:grid;grid-template-columns:repeat(2,13px);grid-template-rows:repeat(2,13px);gap:3px;background:#e8ecdf}.icon-memory i{display:grid;place-items:center;border-radius:3px;background:#fffefa;color:#819174;font-size:10px;font-style:normal}
+.card-2048{background:linear-gradient(145deg,#fffefa,#f5f0e5)}.icon-2048{display:grid;grid-template-columns:repeat(2,16px);grid-template-rows:repeat(2,16px);gap:2px;background:#eee7d7}.icon-2048 b{display:grid;place-items:center;border-radius:4px;background:#fffaf0;color:#a98854;font:700 9px "Segoe UI",system-ui,sans-serif}
+.card-mole{background:linear-gradient(145deg,#fffefa,#f5eee7)}.icon-mole{position:relative;background:#f1e4d8;color:#977862;font-size:29px}.icon-mole i{position:absolute;right:9px;top:7px;color:#d4a65d;font-size:12px;font-style:normal}
+.home-footer{display:flex;justify-content:space-between;padding:18px 0 28px;border-top:1px solid #eae8df;color:#a09d94;font-size:10px}.home-footer span:last-child{color:#929087}.home-footer span span{color:#c68575}.home-footer a{color:inherit;text-decoration:none}.home-footer a:hover{text-decoration:underline}
+.policy-page{width:min(720px,calc(100% - 48px));margin:64px auto 80px}.policy-page h1{margin:10px 0 6px;font:700 clamp(38px,7vw,56px) "Segoe UI",system-ui,sans-serif;letter-spacing:-.065em}.policy-page h2{margin:30px 0 8px;font:700 18px "Segoe UI",system-ui,sans-serif;letter-spacing:-.03em}.policy-page p{color:#716f67;font-size:14px;line-height:1.75}.policy-page .policy-updated,.policy-page .policy-note{color:#99968d;font-size:11px}
+@media(max-width:700px){.welcome{padding:58px 0 48px}.game-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.game-card,.game-card:nth-child(4),.game-card:nth-child(5){grid-column:span 1;min-height:188px;padding:15px}.card-copy h3{font-size:15px}.card-index{right:15px;bottom:15px}.home-main{width:min(100% - 32px,560px)}}
+@media(max-width:420px){.game-grid{grid-template-columns:1fr}.game-card,.game-card:nth-child(4),.game-card:nth-child(5){min-height:174px}.header-note{display:none}.welcome h1{font-size:54px}.home-footer{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.game-card,.card-arrow{transition:none}}

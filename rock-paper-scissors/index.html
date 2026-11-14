@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <title>Rock Paper Scissors — Playroom</title>
+  <link rel="stylesheet" href="../shared/site.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span class="brand-mark">p</span> playroom</a>
+    <span class="header-note">A little room for play</span>
+  </header>
+  <main class="game-page">
+    <a class="back-link" href="../index.html">← All games</a>
+    <section class="game-heading">
+      <h1>Rock Paper Scissors</h1>
+      <p>One little countdown. One very important choice.</p>
+    </section>
+    <section class="game-shell">
+      <div class="game-toolbar">
+        <span class="score-label">You <span class="score-value" id="player-score">0</span></span>
+        <button class="game-button secondary" id="reset">Reset score</button>
+        <span class="score-label">Ties <span class="score-value" id="tie-score">0</span></span>
+      </div>
+      <div class="duel" id="duel">
+        <div class="hand-side">
+          <span class="side-label">YOU</span>
+          <span class="hand" id="player-hand" aria-label="Your choice">✊</span>
+        </div>
+        <span class="versus">VS</span>
+        <div class="hand-side">
+          <span class="side-label">PLAYROOM</span>
+          <span class="hand opponent" id="computer-hand" aria-label="Playroom choice">✊</span>
+        </div>
+      </div>
+      <p class="status-line" id="status" aria-live="polite">Choose your move.</p>
+      <div class="choices" id="choices">
+        <button class="choice" data-choice="rock"><span>✊</span>Rock</button>
+        <button class="choice" data-choice="paper"><span>✋</span>Paper</button>
+        <button class="choice" data-choice="scissors"><span>✌️</span>Scissors</button>
+      </div>
+      <p class="stats-note">Best of luck — and best of three?</p>
+    </section>
+  </main>
+  <canvas class="effects-canvas" id="effects" aria-hidden="true"></canvas>
+  <script src="stats.js"></script>
+  <script src="anim.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <title>2048 — Playroom</title>
+  <link rel="stylesheet" href="../shared/site.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span class="brand-mark">p</span> playroom</a>
+    <span class="header-note">A little room for play</span>
+  </header>
+  <main class="game-page">
+    <a class="back-link" href="../index.html">← All games</a>
+    <section class="game-heading">
+      <h1>2048</h1>
+      <p>Slide the tiles. Join the numbers. Take it one move at a time.</p>
+    </section>
+    <section class="game-shell">
+      <div class="game-toolbar">
+        <span class="score-label">Score <span class="score-value" id="score">0</span></span>
+        <div class="toolbar-right">
+          <span class="score-label">Best <span class="score-value" id="best">0</span></span>
+          <button class="game-button secondary" id="reset">New game</button>
+        </div>
+      </div>
+      <div class="board-2048" id="board" role="grid" aria-label="2048 game board">
+        <div class="cells" id="cells"></div>
+        <div class="tiles" id="tiles"></div>
+      </div>
+      <p class="status-line" id="status" aria-live="polite">Use arrow keys or swipe to move tiles.</p>
+      <p class="stats-note">Use ↑ ↓ ← → · Swipe on touch screens</p>
+    </section>
+  </main>
+  <script src="stats.js"></script>
+  <script src="anim.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

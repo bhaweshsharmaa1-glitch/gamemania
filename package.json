@@ -1,0 +1,9 @@
+{
+  "name": "playroom-mini-games",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A calm collection of five little games.",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  }
+}

@@ -1,0 +1,108 @@
+<Window x:Class="Playroom.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Playroom" Width="1280" Height="860"
+        MinWidth="1000" MinHeight="700" WindowStartupLocation="CenterScreen"
+        Background="{StaticResource Paper}" Foreground="{StaticResource Ink}"
+        FontFamily="Segoe UI" PreviewKeyDown="Window_KeyDown">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="224" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="#F0EEE7" Padding="19,24,19,18">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="4,2,0,30">
+                    <Grid Width="34" Height="34" VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" Grid.Column="0" Background="{StaticResource Sage}" CornerRadius="7" Margin="1.5" />
+                        <Border Grid.Row="0" Grid.Column="1" Background="{StaticResource Coral}" CornerRadius="7" Margin="1.5" />
+                        <Border Grid.Row="1" Grid.Column="0" Background="{StaticResource Gold}" CornerRadius="7" Margin="1.5" />
+                        <Border Grid.Row="1" Grid.Column="1" Background="{StaticResource SageDark}" CornerRadius="7" Margin="1.5" />
+                    </Grid>
+                    <StackPanel VerticalAlignment="Center" Margin="10,0,0,0">
+                        <TextBlock Text="playroom" FontSize="18" FontWeight="SemiBold" />
+                        <TextBlock Text="A little room for play" FontSize="11" Foreground="{StaticResource Muted}" />
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1">
+                    <TextBlock Text="YOUR SPACE" FontSize="10" FontWeight="SemiBold"
+                               Foreground="{StaticResource Muted}" Margin="9,0,0,8" />
+                    <Button x:Name="HomeNavButton" Content="⌂   Playroom"
+                            Style="{StaticResource NavigationButton}" Click="HomeNav_Click" />
+                    <Button x:Name="RecordsNavButton" Content="✦   Hall of Play"
+                            Style="{StaticResource NavigationButton}" Click="RecordsNav_Click" />
+                    <Button x:Name="PrivacyNavButton" Content="◉   Privacy &amp; data"
+                            Style="{StaticResource NavigationButton}" Click="PrivacyNav_Click" />
+                </StackPanel>
+
+                <Border Grid.Row="3" Background="#E4E6DD" CornerRadius="16" Padding="13,14">
+                    <StackPanel>
+                        <TextBlock Text="Today's little goal" FontSize="12" FontWeight="SemiBold" />
+                        <TextBlock x:Name="SidebarDailyTitle" Text="A fresh challenge each day"
+                                   FontSize="13" FontWeight="SemiBold" TextWrapping="Wrap" Margin="0,10,0,2" />
+                        <TextBlock x:Name="SidebarDailyDescription" Text="Play at your own pace."
+                                   FontSize="11" Foreground="{StaticResource Muted}" TextWrapping="Wrap" />
+                        <ProgressBar x:Name="SidebarDailyProgress" Minimum="0" Maximum="1" Value="0"
+                                     Height="5" Margin="0,11,0,7" Foreground="{StaticResource SageDark}"
+                                     Background="#D0D4C9" />
+                        <TextBlock x:Name="SidebarStreak" Text="No streak yet. Start one today."
+                                   FontSize="11" Foreground="{StaticResource SageDark}" TextWrapping="Wrap" />
+                        <Button x:Name="DailyPlayButton" Content="Play today's challenge"
+                                Style="{StaticResource PrimaryButton}" Height="37"
+                                Padding="8,6" FontSize="11" Margin="0,12,0,0"
+                                Click="DailyPlay_Click" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Column="1" Margin="34,20,36,26">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="68" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="4,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock x:Name="HeaderTitle" Text="Your playroom" FontSize="17" FontWeight="SemiBold" />
+                    <TextBlock x:Name="HeaderSubtitle" Text="Five games. No rush."
+                               FontSize="12" Foreground="{StaticResource Muted}" Margin="0,3,0,0" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Border Background="#E9EDE5" CornerRadius="10" Padding="11,8" Margin="0,0,12,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Width="7" Height="7" Fill="{StaticResource SageDark}"
+                                     VerticalAlignment="Center" Margin="0,0,7,0" />
+                            <TextBlock Text="Offline · saved on this PC" FontSize="11"
+                                       Foreground="{StaticResource SageDark}" />
+                        </StackPanel>
+                    </Border>
+                    <Button x:Name="BackButton" Content="←  All games"
+                            Style="{StaticResource QuietButton}" Padding="15,8"
+                            VerticalAlignment="Center" Visibility="Collapsed" Click="BackButton_Click" />
+                </StackPanel>
+            </Grid>
+            <ContentControl x:Name="MainContent" Grid.Row="1" Margin="0,14,0,0" />
+        </Grid>
+    </Grid>
+</Window>

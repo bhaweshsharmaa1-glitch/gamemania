@@ -1,0 +1,16 @@
+.memory-grid{display:grid;width:min(100%,420px);grid-template-columns:repeat(4,1fr);gap:10px;margin:0 auto}
+.memory-card{position:relative;aspect-ratio:1;border:0;border-radius:13px;background:transparent;perspective:700px;cursor:pointer}
+.card-inner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.72,.25,1)}
+.memory-card.flipped .card-inner,.memory-card.matched .card-inner{transform:rotateY(180deg)}
+.card-face{position:absolute;inset:0;display:grid;place-items:center;border-radius:13px;backface-visibility:hidden}
+.card-back{background:#e9ecdf;color:#899679;font:700 20px "Segoe UI",system-ui,sans-serif}
+.card-front{transform:rotateY(180deg);border:1px solid #eeeae0;background:#fffefa;color:#718365;font-size:clamp(23px,6vw,35px)}
+.memory-card.matched .card-front{border-color:#cddcc3;background:#eff5e9;box-shadow:0 0 0 3px #e2edda;animation:match-pop .32s ease-out}
+.memory-card.wrong{animation:card-shake .32s ease-in-out}
+.memory-card:hover:not(.flipped):not(.matched){transform:translateY(-2px)}
+@keyframes match-pop{50%{transform:rotateY(180deg) scale(1.09)}}
+@keyframes card-shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.match-spark{position:fixed;z-index:10;width:8px;height:8px;border-radius:50%;background:#c9a45f;box-shadow:0 -17px #91a17d,15px -9px #dc8c75,16px 8px #c9a45f,0 17px #91a17d,-15px 9px #dc8c75,-15px -9px #c9a45f;pointer-events:none;animation:spark-burst .45s ease-out forwards}
+@keyframes spark-burst{to{transform:scale(.3);opacity:0}}
+@media(max-width:420px){.memory-grid{gap:7px}.memory-card,.card-face{border-radius:10px}}
+@media(prefers-reduced-motion:reduce){.card-inner{transition:none}.memory-card.wrong,.memory-card.matched .card-front{animation:none}}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <title>Connect Four — Playroom</title>
+  <link rel="stylesheet" href="../shared/site.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span class="brand-mark">p</span> playroom</a>
+    <span class="header-note">A little room for play</span>
+  </header>
+  <main class="game-page">
+    <a class="back-link" href="../index.html">← All games</a>
+    <section class="game-heading">
+      <h1>Connect Four</h1>
+      <p>Take turns. Connect four. Have a lovely little victory.</p>
+    </section>
+    <section class="game-shell">
+      <div class="game-toolbar">
+        <span class="score-label">Player <span class="score-value" id="turn-label">Coral</span></span>
+        <button class="game-button secondary" id="reset">New game</button>
+      </div>
+      <div class="board-wrap">
+        <div class="column-hints" id="column-hints" aria-label="Drop a disc"></div>
+        <div class="board" id="board" role="grid" aria-label="Connect Four board"></div>
+      </div>
+      <p class="status-line" id="status" aria-live="polite">Coral goes first. Choose a column.</p>
+      <p class="stats-note">Two players · take turns on the same screen</p>
+    </section>
+  </main>
+  <script src="stats.js"></script>
+  <script src="anim.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

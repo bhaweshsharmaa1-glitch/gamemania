@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <title>Memory Match — Playroom</title>
+  <link rel="stylesheet" href="../shared/site.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span class="brand-mark">p</span> playroom</a>
+    <span class="header-note">A little room for play</span>
+  </header>
+  <main class="game-page">
+    <a class="back-link" href="../index.html">← All games</a>
+    <section class="game-heading">
+      <h1>Memory Match</h1>
+      <p>A few lovely cards. Can you find all eight pairs?</p>
+    </section>
+    <section class="game-shell">
+      <div class="game-toolbar">
+        <span class="score-label">Moves <span class="score-value" id="moves">0</span></span>
+        <button class="game-button secondary" id="reset">Shuffle cards</button>
+        <span class="score-label">Pairs <span class="score-value" id="pairs">0 / 8</span></span>
+      </div>
+      <div class="memory-grid" id="grid" aria-label="Memory cards"></div>
+      <p class="status-line" id="status" aria-live="polite">Turn over two cards to find a pair.</p>
+      <p class="stats-note">Take your time. There is no timer here.</p>
+    </section>
+  </main>
+  <script src="stats.js"></script>
+  <script src="anim.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

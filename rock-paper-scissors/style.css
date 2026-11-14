@@ -1,0 +1,20 @@
+.duel{display:flex;align-items:center;justify-content:center;gap:clamp(23px,9vw,100px);padding:30px 0 4px}
+.hand-side{display:flex;min-width:100px;flex-direction:column;align-items:center;gap:12px}
+.side-label{color:#aaa69b;font-size:9px;font-weight:700;letter-spacing:.16em}
+.hand{display:grid;width:90px;height:90px;place-items:center;border:1px solid #eeece4;border-radius:25px;background:#f8f6ef;font-size:44px;transform:rotate(0deg)}
+.hand.opponent{transform:scaleX(-1)}
+.versus{color:#c3bfb3;font:700 11px "Segoe UI",system-ui,sans-serif;letter-spacing:.12em}
+.duel.playing .hand{animation:anticipate .65s ease-in-out 2}
+.duel.playing .hand.opponent{animation-name:anticipate-opponent}
+@keyframes anticipate{0%,100%{transform:translateY(0) rotate(0)}40%{transform:translateY(8px) rotate(-17deg)}72%{transform:translateY(-3px) rotate(9deg)}}
+@keyframes anticipate-opponent{0%,100%{transform:scaleX(-1) translateY(0) rotate(0)}40%{transform:scaleX(-1) translateY(8px) rotate(-17deg)}72%{transform:scaleX(-1) translateY(-3px) rotate(9deg)}}
+.duel.result{animation:result-settle .3s ease-out}
+@keyframes result-settle{30%{transform:translateX(-4px)}65%{transform:translateX(3px)}100%{transform:translateX(0)}}
+.choices{display:flex;justify-content:center;gap:10px;margin-top:12px}
+.choice{display:flex;min-width:85px;flex-direction:column;align-items:center;gap:6px;padding:10px 15px;border:1px solid #eae7dd;border-radius:12px;background:#fffefa;color:#65645b;font:600 10px "Segoe UI",system-ui,sans-serif;cursor:pointer;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+.choice span{font-size:23px}
+.choice:hover{transform:translateY(-3px);border-color:#d4dbc9;background:#f8f9f4}
+.choice:disabled{opacity:.55;cursor:default}
+.status-line.win{color:#788a6a}.status-line.lose{color:#c27d6f}
+@media(max-width:420px){.hand{width:72px;height:72px;font-size:36px;border-radius:21px}.choices{gap:7px}.choice{min-width:76px;padding:9px 10px}}
+@media(prefers-reduced-motion:reduce){.duel.playing .hand,.duel.result{animation:none}}

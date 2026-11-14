@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <title>Whack-a-Mole — Playroom</title>
+  <link rel="stylesheet" href="../shared/site.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span class="brand-mark">p</span> playroom</a>
+    <span class="header-note">A little room for play</span>
+  </header>
+  <main class="game-page">
+    <a class="back-link" href="../index.html">← All games</a>
+    <section class="game-heading">
+      <h1>Whack-a-Mole</h1>
+      <p>Little moles, quick visits. See how many you can catch.</p>
+    </section>
+    <section class="game-shell">
+      <div class="game-toolbar">
+        <span class="score-label">Score <span class="score-value" id="score">0</span></span>
+        <div class="timer-wrap" aria-label="Time remaining">
+          <span class="timer-label">TIME</span>
+          <span class="timer-ring" id="timer-ring"><span id="time">20</span></span>
+        </div>
+        <span class="score-label">Best <span class="score-value" id="best">0</span></span>
+      </div>
+      <div class="mole-grid" id="grid" aria-label="Mole holes"></div>
+      <p class="status-line" id="status" aria-live="polite">Ready when you are. Tap start!</p>
+      <div class="mole-actions"><button class="game-button" id="start">Start a round</button></div>
+      <p class="stats-note">A tiny 20-second burst of fun</p>
+    </section>
+    <canvas class="effects-canvas" id="effects" aria-hidden="true"></canvas>
+  </main>
+  <script src="stats.js"></script>
+  <script src="anim.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
